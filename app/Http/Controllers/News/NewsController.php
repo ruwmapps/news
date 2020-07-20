@@ -31,8 +31,8 @@ class NewsController extends Controller
         $news->created_at = new \DateTime();
         $news->updated_at = new \DateTime();
         if ($news->save()) {
-            return 1;
+            return ['result'=>1];
         }
-        return 0;
+        return ['result'=>0];
     }
 }

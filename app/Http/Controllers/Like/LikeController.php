@@ -15,17 +15,17 @@ class LikeController extends Controller
         $like->id_user = $req->query('iduser');
         $like->id_news = $req->query('idnews');
         if ($like->save() && News::find($req->query('idnews'))) {
-            return 1;
+            return ['result'=>1];
         }
-        return 0;
+        return ['result'=>0];
 
     }
     public function downlike(LikeRequest $req)
     {
         if (Like::where('id_user', '=', $req->query('iduser'))->where('id_news', '=', $req->query('idnews'))->delete()) {
-            return 1;
+            return ['result'=>1];
         }
-        return 0;
+        return ['result'=>0];
 
     }
 }
