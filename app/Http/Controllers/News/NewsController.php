@@ -12,7 +12,7 @@ class NewsController extends Controller
 {
     public function news()
     {
-        return response()->json(News::get(),200);
+        return response()->json(News::select('*')->orderByDesc('updated_at')->get(),200);
     }
     public function topnews()
     {
