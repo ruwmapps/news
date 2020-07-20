@@ -2,7 +2,7 @@
 
 ## Получение списка новостей
 
-GET news.wmapps.ru/api/news
+GET news.wmapps.ru/api/news  (самые новые первыми)
 
 Возвращаемые значения  JSON
 
