@@ -21,5 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('country','Country\CountryController@country');
 Route::get('news','News\NewsController@news');
 Route::get('topnews','News\NewsController@topnews');
+Route::post('addnews','News\NewsController@addnews');
 Route::post('like/up','Like\LikeController@uplike');
 Route::post('like/down','Like\LikeController@downlike');

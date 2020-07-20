@@ -3,6 +3,7 @@ namespace App\Http\Controllers\News;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\AddnewsRequest;
 use App\Models\News;
 use App\Models\Like;
 use Illuminate\Support\Facades\DB;
@@ -21,5 +22,17 @@ class NewsController extends Controller
             ->groupBy('news.id')
             ->orderByDesc('likes')
             ->get();
+    }
+    public function addnews(AddnewsRequest $req)
+    {
+        $news = new News();
+        $news->title = $req->query('title');
+        $news->description = $req->query('description');
+        $news->created_at = new \DateTime();
+        $news->updated_at = new \DateTime();
+        if ($news->save()) {
+            return 1;
+        }
+        return 0;
     }
 }
