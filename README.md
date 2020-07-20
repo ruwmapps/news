@@ -31,8 +31,10 @@ POST news.wmapps.ru/api/like/up
 
 параметры для POST запроса
 
+```
 (int)iduser - id пользователя
 (int)idnews - id нужной новости
+```
 
 Возвращаемые значения  1 - удачно, 0 - не удачно
 
@@ -43,8 +45,10 @@ POST news.wmapps.ru/api/like/down
 
 параметры для POST запроса
 
+```
 (int)iduser - id пользователя
 (int)idnews - id нужной новости
+```
 
 Возвращаемые значения  1 - удачно, 0 - не удачно
 
