@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('country','Country\CountryController@country');
+Route::get('news','News\NewsController@news');
+Route::get('topnews','News\NewsController@topnews');
+Route::post('like/up','Like\LikeController@uplike');
+Route::post('like/down','Like\LikeController@downlike');
